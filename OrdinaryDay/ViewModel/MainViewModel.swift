@@ -6,17 +6,31 @@
 //
 
 import SwiftUI
+import PhotosUI
 
+@MainActor
 class MainViewModel: ObservableObject{
     @Published var isNewDiary = false
-    @Published var diaryList: [Diary] = [
-//        Diary(title: "오늘 학식 미쳤고", content: "학식 진짜 맛있었음", date: Date.now),
-//        Diary(title: "오늘 학식 미쳤고asdfasdf", content: "학식 진짜 맛있었음", date: Date.now),
-//        Diary(title: "오늘 학식 미쳤고", content: "학식 진짜 맛있었음", date: Date.now)
-    ]
+    @Published var diaryList: [Diary] = []
+    @Published var newImage: UIImage?
+    @Published var selectedPhoto: PhotosPickerItem?
+    @Published var newDiary = Diary(title: "", content: "", date: Date(), weather: .wendy)
 
-    func addNewDiary(_ newDiary: Diary) {
+    func addNewDiary() {
+        newDiary.image = newImage?.pngData()
+        print(newDiary.image)
         diaryList.append(newDiary)
+    }
+
+    func convertPhoto() {
+        Task {
+            if let imageData = try? await selectedPhoto?.loadTransferable(type: Data.self) {
+                if let image = UIImage(data: imageData) {
+                    newImage = image
+                    selectedPhoto = nil
+                }
+            }
+        }
     }
 }
 

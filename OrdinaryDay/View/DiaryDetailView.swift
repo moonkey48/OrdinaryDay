@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct DiaryDetailView: View {
     @Environment(\.dismiss) private var dismiss
@@ -76,9 +77,40 @@ private extension DiaryDetailView {
     var addImageView: some View {
         Text("오늘 기억에 남는 순간")
             .font(.customTitle3)
-        Image("box_clear")
-            .resizable()
-            .scaledToFit()
+        if !viewModel.isEdit {
+            ZStack {
+                Image("box_clear")
+                    .resizable()
+                    .scaledToFit()
+                if let imageData = viewModel.diary.image,
+                   let uiImage = UIImage(data: imageData)
+                {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 100)
+                }
+            }
+        }
+//        PhotosPicker(selection: $viewModel.selectedPhoto) {
+//            ZStack {
+//                Image("box_clear")
+//                    .resizable()
+//                    .scaledToFit()
+//                if let image = viewModel.newImage {
+//                    Image(uiImage: image)
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 300, height: 100)
+//                }
+//            }
+//        }
+//        .onChange(of: viewModel.selectedPhoto) { _, _ in
+//            viewModel.convertPhoto()
+//        }
+//        Image("box_clear")
+//            .resizable()
+//            .scaledToFit()
     }
 
     @ViewBuilder

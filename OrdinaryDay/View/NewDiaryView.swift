@@ -6,10 +6,10 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct NewDiaryView: View {
     @ObservedObject var viewModel: MainViewModel
-    @State private var newDiary = Diary(title: "", content: "", date: Date(), weather: .wendy)
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -29,10 +29,10 @@ private extension NewDiaryView {
     @ViewBuilder
     var dateWeatherView: some View {
         HStack {
-            Text(newDiary.monthDayWeek)
+            Text(viewModel.newDiary.monthDayWeek)
             Spacer()
             Text("날씨")
-            if let weather = newDiary.weather {
+            if let weather = viewModel.newDiary.weather {
                 Image("icon_\(weather.rawValue)")
             }
         }
@@ -44,16 +44,30 @@ private extension NewDiaryView {
     var addImageView: some View {
         Text("오늘 기억에 남는 순간")
             .font(.customTitle3)
-        Image("box_clear")
-            .resizable()
-            .scaledToFit()
+        PhotosPicker(selection: $viewModel.selectedPhoto) {
+            ZStack {
+                Image("box_clear")
+                    .resizable()
+                    .scaledToFit()
+                if let image = viewModel.newImage {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 100)
+                }
+            }
+        }
+        .onChange(of: viewModel.selectedPhoto) { _, _ in
+            viewModel.convertPhoto()
+        }
+
     }
 
     @ViewBuilder
     var titleView: some View {
         Text("일기 제목")
             .font(.customTitle3)
-        TextField("", text: $newDiary.title, axis: .vertical)
+        TextField("", text: $viewModel.newDiary.title, axis: .vertical)
             .font(.customLargeTitle)
             .lineLimit(2)
         Image("divider")
@@ -73,7 +87,7 @@ private extension NewDiaryView {
             }
             .padding(.top, 60)
             VStack {
-                TextEditor(text: $newDiary.content)
+                TextEditor(text: $viewModel.newDiary.content)
                     .scrollContentBackground(.hidden)
                       .font(.customTitle)
                       .lineSpacing(30)
@@ -97,7 +111,7 @@ private extension NewDiaryView {
                 }
             }
             Button {
-                viewModel.addNewDiary(newDiary)
+                viewModel.addNewDiary()
                 viewModel.isNewDiary = false
             } label: {
                 ZStack {
