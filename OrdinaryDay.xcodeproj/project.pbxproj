@@ -18,6 +18,7 @@
 		3A57E0102CAE3E710050CA0F /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57E00F2CAE3E710050CA0F /* Diary.swift */; };
 		3A57E0132CAE437D0050CA0F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57E0122CAE437D0050CA0F /* MainViewModel.swift */; };
 		3A57E0152CAE683A0050CA0F /* NewDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57E0142CAE683A0050CA0F /* NewDiaryView.swift */; };
+		3A57E0172CAE6B690050CA0F /* DiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57E0162CAE6B690050CA0F /* DiaryDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		3A57E00F2CAE3E710050CA0F /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		3A57E0122CAE437D0050CA0F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		3A57E0142CAE683A0050CA0F /* NewDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDiaryView.swift; sourceTree = "<group>"; };
+		3A57E0162CAE6B690050CA0F /* DiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				3A12E5022CAE321B009927E3 /* MainView.swift */,
 				3A12E5002CAE306E009927E3 /* OnboardingView.swift */,
 				3A57E0142CAE683A0050CA0F /* NewDiaryView.swift */,
+				3A57E0162CAE6B690050CA0F /* DiaryDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A57E0172CAE6B690050CA0F /* DiaryDetailView.swift in Sources */,
 				3A12E5012CAE306E009927E3 /* OnboardingView.swift in Sources */,
 				3A12E50D2CAE3B48009927E3 /* Font+.swift in Sources */,
 				3A12E5032CAE321B009927E3 /* MainView.swift in Sources */,

@@ -13,7 +13,11 @@ struct MainView: View {
     var body: some View {
         VStack(spacing: 0) {
             headerView
-            diaryListView
+            if viewModel.diaryList.isEmpty {
+                emptyDiaryPlaceholderView
+            } else {
+                diaryListView
+            }
             addDiaryButtonView
         }
         .foregroundStyle(.black)
@@ -56,6 +60,18 @@ private extension MainView {
                 }
                 .frame(maxWidth: 360)
             }
+        }
+    }
+
+    var emptyDiaryPlaceholderView: some View {
+        VStack {
+            Spacer()
+            Text("아래 버튼을 눌러서\n오늘의 일상을 기록해보세요 :)")
+                .multilineTextAlignment(.center)
+                .font(.customTitle2)
+            Image("arrow_down")
+                .padding(.bottom, 40)
+            Spacer()
         }
     }
 
