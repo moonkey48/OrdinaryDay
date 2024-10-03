@@ -8,10 +8,15 @@
 import SwiftUI
 
 class MainViewModel: ObservableObject{
+    @Published var isNewDiary = false
     @Published var diaryList: [Diary] = [
         Diary(title: "오늘 학식 미쳤고", content: "학식 진짜 맛있었음", date: Date.now),
         Diary(title: "오늘 학식 미쳤고asdfasdf", content: "학식 진짜 맛있었음", date: Date.now),
         Diary(title: "오늘 학식 미쳤고", content: "학식 진짜 맛있었음", date: Date.now)
     ]
+
+    func addNewDiary(_ newDiary: Diary) {
+        diaryList.append(newDiary)
+    }
 }
 

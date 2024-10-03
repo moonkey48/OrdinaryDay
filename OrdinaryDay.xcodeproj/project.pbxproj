@@ -17,6 +17,7 @@
 		3A12E50D2CAE3B48009927E3 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12E50C2CAE3B48009927E3 /* Font+.swift */; };
 		3A57E0102CAE3E710050CA0F /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57E00F2CAE3E710050CA0F /* Diary.swift */; };
 		3A57E0132CAE437D0050CA0F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57E0122CAE437D0050CA0F /* MainViewModel.swift */; };
+		3A57E0152CAE683A0050CA0F /* NewDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57E0142CAE683A0050CA0F /* NewDiaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3A12E50C2CAE3B48009927E3 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		3A57E00F2CAE3E710050CA0F /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		3A57E0122CAE437D0050CA0F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		3A57E0142CAE683A0050CA0F /* NewDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDiaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				3A12E5022CAE321B009927E3 /* MainView.swift */,
 				3A12E5002CAE306E009927E3 /* OnboardingView.swift */,
+				3A57E0142CAE683A0050CA0F /* NewDiaryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				3A12E5012CAE306E009927E3 /* OnboardingView.swift in Sources */,
 				3A12E50D2CAE3B48009927E3 /* Font+.swift in Sources */,
 				3A12E5032CAE321B009927E3 /* MainView.swift in Sources */,
+				3A57E0152CAE683A0050CA0F /* NewDiaryView.swift in Sources */,
 				3A12E4F52CAE302D009927E3 /* ContentView.swift in Sources */,
 				3A12E4F32CAE302D009927E3 /* OrdinaryDayApp.swift in Sources */,
 				3A57E0132CAE437D0050CA0F /* MainViewModel.swift in Sources */,
