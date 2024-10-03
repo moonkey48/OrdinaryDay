@@ -91,21 +91,23 @@ struct NewDiaryView: View {
                 Spacer()
                 ZStack {
                     VStack(spacing: 58) {
-                        ForEach(0..<30, id: \.self) { _ in
+                        ForEach(0..<100, id: \.self) { _ in
                             Image("divider")
                         }
                         Spacer()
                     }
+                    .padding(.top, 60)
                     VStack {
-                        TextField("",text: $newDiary.content, axis: .vertical)
+                        TextEditor(text: $newDiary.content)
+                            .scrollContentBackground(.hidden)
                               .font(.customTitle)
                               .lineSpacing(30)
                               .kerning(5)
-                              .lineLimit(21)
                         Spacer()
                     }
                 }
             }
+
             HStack {
                 Button {
                     isNewDiary = false
@@ -119,6 +121,7 @@ struct NewDiaryView: View {
                 }
                 Button {
                     isNewDiary = false
+                    // TODO: 추가 기능 구현
                 } label: {
                     ZStack {
                         Image("button_small_green")
