@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 class DiaryDetailViewModel: ObservableObject {
     @Published var diary: Diary
     @Published var isEdit = false
     @Published var isShowDeleteAlert = false
     @Published var editingDiary: Diary
+    @Published var selectedPhoto: PhotosPickerItem?
 
     init(_ currentDiary: Diary) {
         diary = currentDiary
@@ -47,6 +49,14 @@ class DiaryDetailViewModel: ObservableObject {
     func deleteDiary() {
         withAnimation(.easeInOut(duration: 0.1)) {
             isShowDeleteAlert = false
+        }
+    }
+
+    func convertPhoto() {
+        Task {
+            if let imageData = try? await selectedPhoto?.loadTransferable(type: Data.self) {
+                editingDiary.image = imageData
+            }
         }
     }
 }

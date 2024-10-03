@@ -91,26 +91,25 @@ private extension DiaryDetailView {
                         .frame(width: 300, height: 100)
                 }
             }
+        } else {
+            PhotosPicker(selection: $viewModel.selectedPhoto) {
+                ZStack {
+                    Image("box_clear")
+                        .resizable()
+                        .scaledToFit()
+                    if let imageData = viewModel.editingDiary.image,
+                       let uiImage = UIImage(data: imageData) {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 300, height: 100)
+                    }
+                }
+            }
+            .onChange(of: viewModel.selectedPhoto) { _, _ in
+                viewModel.convertPhoto()
+            }
         }
-//        PhotosPicker(selection: $viewModel.selectedPhoto) {
-//            ZStack {
-//                Image("box_clear")
-//                    .resizable()
-//                    .scaledToFit()
-//                if let image = viewModel.newImage {
-//                    Image(uiImage: image)
-//                        .resizable()
-//                        .scaledToFit()
-//                        .frame(width: 300, height: 100)
-//                }
-//            }
-//        }
-//        .onChange(of: viewModel.selectedPhoto) { _, _ in
-//            viewModel.convertPhoto()
-//        }
-//        Image("box_clear")
-//            .resizable()
-//            .scaledToFit()
     }
 
     @ViewBuilder

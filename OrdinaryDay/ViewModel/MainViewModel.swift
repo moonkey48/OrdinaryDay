@@ -18,7 +18,6 @@ class MainViewModel: ObservableObject{
 
     func addNewDiary() {
         newDiary.image = newImage?.pngData()
-        print(newDiary.image)
         diaryList.append(newDiary)
     }
 
