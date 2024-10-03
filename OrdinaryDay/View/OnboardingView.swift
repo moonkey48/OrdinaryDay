@@ -14,15 +14,13 @@ struct OnboardingView: View {
                 .resizable()
                 .scaledToFit()
             Spacer()
-            HStack {
-                Image("title")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 240)
-                Spacer()
+            VStack(alignment: .leading) {
+                Text("보통의 하루")
+                    .font(.customXLargeTitle)
+                Text("평범한 일상의 기록")
+                    .font(.customTitle3)
             }
             .padding(24)
-
         }
         .ignoresSafeArea()
     }

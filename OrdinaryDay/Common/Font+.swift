@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension Font {
-    static let customXLargeTitle: Font = .custom("KyoboHandwriting2019", size: 70, relativeTo: .largeTitle)
+    static let customXLargeTitle: Font = .custom("KyoboHandwriting2019", size: 44, relativeTo: .largeTitle)
     static let customLargeTitle: Font = .custom("KyoboHandwriting2019", size: 34, relativeTo: .largeTitle)
     static let customTitle: Font = .custom("KyoboHandwriting2019", size: 25, relativeTo: .title)
     static let customTitle2: Font = .custom("KyoboHandwriting2019", size: 22, relativeTo: .title2)
