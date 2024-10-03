@@ -11,6 +11,10 @@
 		3A12E4F52CAE302D009927E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12E4F42CAE302D009927E3 /* ContentView.swift */; };
 		3A12E4F72CAE302E009927E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A12E4F62CAE302E009927E3 /* Assets.xcassets */; };
 		3A12E4FA2CAE302E009927E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A12E4F92CAE302E009927E3 /* Preview Assets.xcassets */; };
+		3A12E5012CAE306E009927E3 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12E5002CAE306E009927E3 /* OnboardingView.swift */; };
+		3A12E5032CAE321B009927E3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12E5022CAE321B009927E3 /* MainView.swift */; };
+		3A12E5092CAE3A66009927E3 /* KyoboHandwriting2019.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A12E5082CAE3A66009927E3 /* KyoboHandwriting2019.otf */; };
+		3A12E50D2CAE3B48009927E3 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12E50C2CAE3B48009927E3 /* Font+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,11 @@
 		3A12E4F42CAE302D009927E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3A12E4F62CAE302E009927E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A12E4F92CAE302E009927E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3A12E5002CAE306E009927E3 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		3A12E5022CAE321B009927E3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3A12E5082CAE3A66009927E3 /* KyoboHandwriting2019.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KyoboHandwriting2019.otf; sourceTree = "<group>"; };
+		3A12E50A2CAE3A84009927E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3A12E50C2CAE3B48009927E3 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +60,12 @@
 		3A12E4F12CAE302D009927E3 /* OrdinaryDay */ = {
 			isa = PBXGroup;
 			children = (
-				3A12E4F22CAE302D009927E3 /* OrdinaryDayApp.swift */,
-				3A12E4F42CAE302D009927E3 /* ContentView.swift */,
-				3A12E4F62CAE302E009927E3 /* Assets.xcassets */,
+				3A12E50B2CAE3B41009927E3 /* Common */,
+				3A12E50A2CAE3A84009927E3 /* Info.plist */,
+				3A12E5042CAE321F009927E3 /* Core */,
+				3A12E5052CAE3228009927E3 /* View */,
 				3A12E4F82CAE302E009927E3 /* Preview Content */,
+				3A12E5062CAE322F009927E3 /* Resource */,
 			);
 			path = OrdinaryDay;
 			sourceTree = "<group>";
@@ -65,6 +76,49 @@
 				3A12E4F92CAE302E009927E3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3A12E5042CAE321F009927E3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3A12E4F22CAE302D009927E3 /* OrdinaryDayApp.swift */,
+				3A12E4F42CAE302D009927E3 /* ContentView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3A12E5052CAE3228009927E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A12E5022CAE321B009927E3 /* MainView.swift */,
+				3A12E5002CAE306E009927E3 /* OnboardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3A12E5062CAE322F009927E3 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3A12E5072CAE3A4B009927E3 /* Fonts */,
+				3A12E4F62CAE302E009927E3 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		3A12E5072CAE3A4B009927E3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3A12E5082CAE3A66009927E3 /* KyoboHandwriting2019.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3A12E50B2CAE3B41009927E3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3A12E50C2CAE3B48009927E3 /* Font+.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A12E5092CAE3A66009927E3 /* KyoboHandwriting2019.otf in Resources */,
 				3A12E4FA2CAE302E009927E3 /* Preview Assets.xcassets in Resources */,
 				3A12E4F72CAE302E009927E3 /* Assets.xcassets in Resources */,
 			);
@@ -137,6 +192,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A12E5012CAE306E009927E3 /* OnboardingView.swift in Sources */,
+				3A12E50D2CAE3B48009927E3 /* Font+.swift in Sources */,
+				3A12E5032CAE321B009927E3 /* MainView.swift in Sources */,
 				3A12E4F52CAE302D009927E3 /* ContentView.swift in Sources */,
 				3A12E4F32CAE302D009927E3 /* OrdinaryDayApp.swift in Sources */,
 			);
@@ -275,6 +333,7 @@
 				DEVELOPMENT_TEAM = 333J2S2AQK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OrdinaryDay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +363,7 @@
 				DEVELOPMENT_TEAM = 333J2S2AQK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OrdinaryDay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
