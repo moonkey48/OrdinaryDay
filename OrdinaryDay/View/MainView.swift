@@ -80,15 +80,32 @@ struct NewDiaryView: View {
             }
             .font(.customLargeTitle)
             .padding(.bottom, 12)
-
-            Text("오늘 기억에 남는 순간")
-                .font(.customTitle3)
-            Image("box_clear")
-                .resizable()
-                .scaledToFit()
-            Text("오늘의 일기")
-                .font(.customTitle3)
-            Spacer()
+            ScrollView {
+                Text("오늘 기억에 남는 순간")
+                    .font(.customTitle3)
+                Image("box_clear")
+                    .resizable()
+                    .scaledToFit()
+                Text("오늘의 일기")
+                    .font(.customTitle3)
+                Spacer()
+                ZStack {
+                    VStack(spacing: 58) {
+                        ForEach(0..<30, id: \.self) { _ in
+                            Image("divider")
+                        }
+                        Spacer()
+                    }
+                    VStack {
+                        TextField("",text: $newDiary.content, axis: .vertical)
+                              .font(.customTitle)
+                              .lineSpacing(30)
+                              .kerning(5)
+                              .lineLimit(21)
+                        Spacer()
+                    }
+                }
+            }
             HStack {
                 Button {
                     isNewDiary = false
@@ -98,7 +115,6 @@ struct NewDiaryView: View {
                             .resizable()
                             .scaledToFit()
                         Text("취소")
-
                     }
                 }
                 Button {
