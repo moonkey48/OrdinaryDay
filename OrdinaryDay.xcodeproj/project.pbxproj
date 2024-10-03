@@ -19,6 +19,7 @@
 		3A57E0132CAE437D0050CA0F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57E0122CAE437D0050CA0F /* MainViewModel.swift */; };
 		3A57E0152CAE683A0050CA0F /* NewDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57E0142CAE683A0050CA0F /* NewDiaryView.swift */; };
 		3A57E0172CAE6B690050CA0F /* DiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57E0162CAE6B690050CA0F /* DiaryDetailView.swift */; };
+		3A57E0192CAE6C580050CA0F /* DiaryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57E0182CAE6C580050CA0F /* DiaryDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		3A57E0122CAE437D0050CA0F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		3A57E0142CAE683A0050CA0F /* NewDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDiaryView.swift; sourceTree = "<group>"; };
 		3A57E0162CAE6B690050CA0F /* DiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailView.swift; sourceTree = "<group>"; };
+		3A57E0182CAE6C580050CA0F /* DiaryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				3A57E0122CAE437D0050CA0F /* MainViewModel.swift */,
+				3A57E0182CAE6C580050CA0F /* DiaryDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				3A12E50D2CAE3B48009927E3 /* Font+.swift in Sources */,
 				3A12E5032CAE321B009927E3 /* MainView.swift in Sources */,
 				3A57E0152CAE683A0050CA0F /* NewDiaryView.swift in Sources */,
+				3A57E0192CAE6C580050CA0F /* DiaryDetailViewModel.swift in Sources */,
 				3A12E4F52CAE302D009927E3 /* ContentView.swift in Sources */,
 				3A12E4F32CAE302D009927E3 /* OrdinaryDayApp.swift in Sources */,
 				3A57E0132CAE437D0050CA0F /* MainViewModel.swift in Sources */,

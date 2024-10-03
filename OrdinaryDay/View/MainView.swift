@@ -11,14 +11,16 @@ struct MainView: View {
     @StateObject private var viewModel = MainViewModel()
 
     var body: some View {
-        VStack(spacing: 0) {
-            headerView
-            if viewModel.diaryList.isEmpty {
-                emptyDiaryPlaceholderView
-            } else {
-                diaryListView
+        NavigationStack {
+            VStack(spacing: 0) {
+                headerView
+                if viewModel.diaryList.isEmpty {
+                    emptyDiaryPlaceholderView
+                } else {
+                    diaryListView
+                }
+                addDiaryButtonView
             }
-            addDiaryButtonView
         }
         .foregroundStyle(.black)
         .sheet(isPresented: $viewModel.isNewDiary) {
@@ -45,20 +47,25 @@ private extension MainView {
     var diaryListView: some View {
         ScrollView {
             ForEach(viewModel.diaryList) { diary in
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text(diary.title)
-                            .font(.customLargeTitle)
-                            .lineLimit(2)
-                        Spacer()
-                        Text(diary.monthDayWeek)
-                            .font(.customTitle)
+                NavigationLink {
+                    DiaryDetailView(diary: diary)
+                } label: {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text(diary.title)
+                                .font(.customLargeTitle)
+                                .lineLimit(2)
+                            Spacer()
+                            Text(diary.monthDayWeek)
+                                .font(.customTitle)
+                        }
+                        Image("divider")
+                            .resizable()
+                            .scaledToFit()
                     }
-                    Image("divider")
-                        .resizable()
-                        .scaledToFit()
+                    .frame(maxWidth: 360)
                 }
-                .frame(maxWidth: 360)
+
             }
         }
     }
