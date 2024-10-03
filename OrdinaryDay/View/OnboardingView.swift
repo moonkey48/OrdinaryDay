@@ -10,7 +10,7 @@ import SwiftUI
 struct OnboardingView: View {
     var body: some View {
         VStack(alignment: .leading) {
-            Image("main")
+            Image("character_large")
                 .resizable()
                 .scaledToFit()
             Spacer()
