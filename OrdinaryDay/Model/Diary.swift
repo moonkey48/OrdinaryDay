@@ -7,11 +7,20 @@
 
 import Foundation
 
+enum Wheather: String {
+    case sunny
+    case cloudy
+    case rainy
+    case wendy
+    case snow
+}
+
 struct Diary: Identifiable {
     let id = UUID()
     var title: String
     var content: String
     var date: Date
+    var weather: Wheather?
     var image: Data?
 }
 

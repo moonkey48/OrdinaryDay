@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var diaryList: [Diary] = [
-        Diary(title: "오늘 학식 미쳤고", content: "학식 진짜 맛있었음", date: Date.now),
-        Diary(title: "오늘 학식 미쳤고", content: "학식 진짜 맛있었음", date: Date.now),
-        Diary(title: "오늘 학식 미쳤고", content: "학식 진짜 맛있었음", date: Date.now)
-    ]
+    @StateObject private var viewModel = MainViewModel()
+    @State private var isNewDiary = true
 
     var body: some View {
         VStack(spacing: 0) {
@@ -28,26 +25,98 @@ struct MainView: View {
             }
             .ignoresSafeArea()
             ScrollView {
-                ForEach(diaryList) { diary in
+                ForEach(viewModel.diaryList) { diary in
                     VStack(alignment: .leading) {
                         HStack {
                             Text(diary.title)
-                                .font(.customTitle)
+                                .font(.customLargeTitle)
+                                .lineLimit(2)
                             Spacer()
                             Text(diary.monthDayWeek)
-                                .font(.customTitle3)
+                                .font(.customTitle)
                         }
                         Image("divider")
                             .resizable()
                             .scaledToFit()
                     }
                     .frame(maxWidth: 360)
-                    .padding(.vertical, 12)
                 }
             }
-            
+            Button {
+                isNewDiary = true
+            } label: {
+                ZStack {
+                    Image("button_large_green")
+                    HStack {
+                        Image("icon_pen_white")
+                        Text("오늘의 일기 쓰기")
+                            .font(.customLargeTitle)
+                            .foregroundStyle(.white)
+                    }
+                }
+            }
         }
         .foregroundStyle(.black)
+        .sheet(isPresented: $isNewDiary) {
+            NewDiaryView(isNewDiary: $isNewDiary, viewModel: viewModel)
+        }
+    }
+}
+
+struct NewDiaryView: View {
+    @Binding var isNewDiary: Bool
+    @ObservedObject var viewModel: MainViewModel
+    @State private var newDiary = Diary(title: "", content: "", date: Date(), weather: .wendy)
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            HStack {
+                Text(newDiary.monthDayWeek)
+                Spacer()
+                Text("날씨")
+                if let weather = newDiary.weather {
+                    Image("icon_\(weather.rawValue)")
+                }
+            }
+            .font(.customLargeTitle)
+            .padding(.bottom, 12)
+
+            Text("오늘 기억에 남는 순간")
+                .font(.customTitle3)
+            Image("box_clear")
+                .resizable()
+                .scaledToFit()
+            Text("오늘의 일기")
+                .font(.customTitle3)
+            Spacer()
+            HStack {
+                Button {
+                    isNewDiary = false
+                } label: {
+                    ZStack {
+                        Image("button_small_orange")
+                            .resizable()
+                            .scaledToFit()
+                        Text("취소")
+
+                    }
+                }
+                Button {
+                    isNewDiary = false
+                } label: {
+                    ZStack {
+                        Image("button_small_green")
+                            .resizable()
+                            .scaledToFit()
+                        Text("일기 끝!")
+                    }
+                }
+            }
+            .font(.customTitle)
+            .foregroundStyle(.white)
+
+        }
+        .padding()
     }
 }
 

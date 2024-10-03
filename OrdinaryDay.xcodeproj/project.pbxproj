@@ -16,6 +16,7 @@
 		3A12E5092CAE3A66009927E3 /* KyoboHandwriting2019.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A12E5082CAE3A66009927E3 /* KyoboHandwriting2019.otf */; };
 		3A12E50D2CAE3B48009927E3 /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A12E50C2CAE3B48009927E3 /* Font+.swift */; };
 		3A57E0102CAE3E710050CA0F /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57E00F2CAE3E710050CA0F /* Diary.swift */; };
+		3A57E0132CAE437D0050CA0F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57E0122CAE437D0050CA0F /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3A12E50A2CAE3A84009927E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3A12E50C2CAE3B48009927E3 /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		3A57E00F2CAE3E710050CA0F /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
+		3A57E0122CAE437D0050CA0F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		3A12E4F12CAE302D009927E3 /* OrdinaryDay */ = {
 			isa = PBXGroup;
 			children = (
+				3A57E0112CAE436E0050CA0F /* ViewModel */,
 				3A57E00E2CAE3E560050CA0F /* Model */,
 				3A12E50B2CAE3B41009927E3 /* Common */,
 				3A12E50A2CAE3A84009927E3 /* Info.plist */,
@@ -130,6 +133,14 @@
 				3A57E00F2CAE3E710050CA0F /* Diary.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3A57E0112CAE436E0050CA0F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3A57E0122CAE437D0050CA0F /* MainViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +219,7 @@
 				3A12E5032CAE321B009927E3 /* MainView.swift in Sources */,
 				3A12E4F52CAE302D009927E3 /* ContentView.swift in Sources */,
 				3A12E4F32CAE302D009927E3 /* OrdinaryDayApp.swift in Sources */,
+				3A57E0132CAE437D0050CA0F /* MainViewModel.swift in Sources */,
 				3A57E0102CAE3E710050CA0F /* Diary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
