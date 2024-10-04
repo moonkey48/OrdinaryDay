@@ -52,8 +52,9 @@ private extension NewDiaryView {
                 if let image = viewModel.newImage {
                     Image(uiImage: image)
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
                         .frame(width: 300, height: 100)
+                        .clipped()
                 }
             }
         }

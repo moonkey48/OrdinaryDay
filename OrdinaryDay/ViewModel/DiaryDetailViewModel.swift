@@ -8,7 +8,8 @@
 import SwiftUI
 import PhotosUI
 
-class DiaryDetailViewModel: ObservableObject {
+@MainActor
+final class DiaryDetailViewModel: ObservableObject {
     @Published var diary: Diary
     @Published var isEdit = false
     @Published var isShowDeleteAlert = false

@@ -127,7 +127,7 @@ private extension DiaryDetailView {
                 Spacer()
             }
         }
-        Image("divider")
+
     }
 
     @ViewBuilder
@@ -147,13 +147,11 @@ private extension DiaryDetailView {
                         .scrollContentBackground(.hidden)
                           .font(.customTitle)
                           .lineSpacing(30)
-                          .kerning(5)
                 } else {
                     Text(viewModel.diary.content)
                         .font(.customTitle)
-                        .lineSpacing(32)
-                        .kerning(5)
-                        .padding(.horizontal, 12)
+                        .lineSpacing(30)
+                        .padding(8)
                 }
                 Spacer()
             }
@@ -207,7 +205,7 @@ private extension DiaryDetailView {
                     Image("button_small_green")
                         .resizable()
                         .scaledToFit()
-                    Text("일기 끝!")
+                    Text("수정 완료")
                 }
             }
         }
