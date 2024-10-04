@@ -10,7 +10,7 @@ import PhotosUI
 
 struct DiaryDetailView: View {
     @Environment(\.dismiss) private var dismiss
-    @ObservedObject var viewModel: DiaryDetailViewModel
+    @Bindable var viewModel: DiaryDetailViewModel
 
     init(diary: Diary, deleteAction: @escaping (Diary) -> Void) {
         viewModel = DiaryDetailViewModel(diary, delete: deleteAction)
@@ -90,8 +90,9 @@ private extension DiaryDetailView {
                 {
                     Image(uiImage: uiImage)
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
                         .frame(width: 300, height: 100)
+                        .clipped()
                 }
             }
         } else {
@@ -104,8 +105,9 @@ private extension DiaryDetailView {
                        let uiImage = UIImage(data: imageData) {
                         Image(uiImage: uiImage)
                             .resizable()
-                            .scaledToFit()
+                            .scaledToFill()
                             .frame(width: 300, height: 100)
+                            .clipped()
                     }
                 }
             }
@@ -122,6 +124,7 @@ private extension DiaryDetailView {
                 .font(.customLargeTitle)
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
+                .frame(height: 44)
         } else {
             HStack {
                 Text(viewModel.diary?.title ?? "")
@@ -129,6 +132,7 @@ private extension DiaryDetailView {
                     .lineLimit(2)
                 Spacer()
             }
+            .frame(height: 44)
         }
 
     }
@@ -146,15 +150,16 @@ private extension DiaryDetailView {
             .padding(.top, 60)
             VStack {
                 if viewModel.isEdit {
-                    TextEditor(text: $viewModel.editingContent)
-                        .scrollContentBackground(.hidden)
-                          .font(.customTitle)
-                          .lineSpacing(30)
+                    TextField("", text: $viewModel.editingContent, axis: .vertical)
+                        .font(.customTitle)
+                        .lineSpacing(30)
+                        .background(.blue)
                 } else {
                     Text(viewModel.diary?.content ?? "")
                         .font(.customTitle)
                         .lineSpacing(30)
-                        .padding(8)
+                        .background(.red)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 Spacer()
             }
@@ -264,6 +269,5 @@ private extension DiaryDetailView {
 
 #Preview {
     DiaryDetailView(diary: .init(title: "즐거운 목요일", content: "목요일에는 맥날을 가고 그린어스에 온다. 즐겁다. 저녁에는 테니스를 쳐야 하는데 치기 귀찮다. 비가 오면 안치는데 비가 얼른 왔으면 좋겠다. 65%의 강수 확률을 믿는다. 제발", date: Date.now, weather: .cloudy)) { diary in
-
     }
 }

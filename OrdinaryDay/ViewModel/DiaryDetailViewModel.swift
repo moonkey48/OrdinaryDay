@@ -8,16 +8,16 @@
 import SwiftUI
 import PhotosUI
 
-@MainActor
-final class DiaryDetailViewModel: ObservableObject {
-    @Published var diary: Diary?
-    @Published var error: DataError?
-    @Published var isEdit = false
-    @Published var isShowDeleteAlert = false
-    @Published var selectedPhoto: PhotosPickerItem?
-    @Published var editingTitle = ""
-    @Published var editingContent = ""
-    @Published var editingImage: Data?
+@Observable
+final class DiaryDetailViewModel {
+    var diary: Diary?
+    var error: DataError?
+    var isEdit = false
+    var isShowDeleteAlert = false
+    var selectedPhoto: PhotosPickerItem?
+    var editingTitle = ""
+    var editingContent = ""
+    var editingImage: Data?
 
     private let swiftDataManager: SwiftDataManager
     private let deleteAction: (Diary) -> Void

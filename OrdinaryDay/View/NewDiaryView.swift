@@ -96,11 +96,9 @@ private extension NewDiaryView {
             }
             .padding(.top, 60)
             VStack {
-                TextEditor(text: $viewModel.newContent)
-                    .scrollContentBackground(.hidden)
-                      .font(.customTitle)
-                      .lineSpacing(30)
-                      .kerning(5)
+                TextField("", text: $viewModel.newContent, axis: .vertical)
+                    .font(.customTitle)
+                    .lineSpacing(30)
                 Spacer()
             }
         }
