@@ -22,7 +22,7 @@ final class MainViewModel: ObservableObject{
     @Published var newImage: UIImage?
 
     let weatherManager: WeatherManager = WeatherManagerImpl()
-    let swiftDataManager: SwiftDataManager = SwiftDataManagerImpl()
+    private let swiftDataManager: SwiftDataManager = SwiftDataManagerImpl()
 
     init() {
         Task {
@@ -57,6 +57,17 @@ final class MainViewModel: ObservableObject{
         diaryList = swiftDataManager.getAllDiary()
     }
 
+    @MainActor
+    func deleteDiary(diary: Diary) {
+        switch swiftDataManager.removeDiary(diary: diary) {
+        case .success(_):
+            print("success to delete")
+            fetchDiaryList()
+        case .failure(let failure):
+            error = failure
+        }
+    }
+
 
     func addNewDiary() {
         let result = swiftDataManager.createDiary(
@@ -70,6 +81,9 @@ final class MainViewModel: ObservableObject{
         case .failure(let failure):
             error = failure
         }
+        newTitle = ""
+        newContent = ""
+        newImage = nil
     }
 
     func convertPhoto() {

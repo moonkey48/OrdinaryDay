@@ -12,8 +12,8 @@ struct DiaryDetailView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var viewModel: DiaryDetailViewModel
 
-    init(diary: Diary) {
-        viewModel = DiaryDetailViewModel(diary)
+    init(diary: Diary, deleteAction: @escaping (Diary) -> Void) {
+        viewModel = DiaryDetailViewModel(diary, delete: deleteAction)
     }
 
     var body: some View {
@@ -50,8 +50,11 @@ private extension DiaryDetailView {
         } label: {
             HStack {
                 Image("arrow_left")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 19)
                 Text("일기 목록")
-                    .font(.customLargeTitle)
+                    .font(.customTitle2)
                 Spacer()
             }
             .foregroundStyle(.black)
@@ -238,6 +241,7 @@ private extension DiaryDetailView {
                         }
                     }
                     Button {
+                        dismiss()
                         viewModel.deleteDiary()
                     } label: {
                         ZStack {
@@ -259,5 +263,7 @@ private extension DiaryDetailView {
 
 
 #Preview {
-    DiaryDetailView(diary: .init(title: "즐거운 목요일", content: "목요일에는 맥날을 가고 그린어스에 온다. 즐겁다. 저녁에는 테니스를 쳐야 하는데 치기 귀찮다. 비가 오면 안치는데 비가 얼른 왔으면 좋겠다. 65%의 강수 확률을 믿는다. 제발", date: Date.now, weather: .cloudy))
+    DiaryDetailView(diary: .init(title: "즐거운 목요일", content: "목요일에는 맥날을 가고 그린어스에 온다. 즐겁다. 저녁에는 테니스를 쳐야 하는데 치기 귀찮다. 비가 오면 안치는데 비가 얼른 왔으면 좋겠다. 65%의 강수 확률을 믿는다. 제발", date: Date.now, weather: .cloudy)) { diary in
+
+    }
 }

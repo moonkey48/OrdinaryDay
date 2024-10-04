@@ -18,7 +18,7 @@ enum WheatherState: String, Codable {
 
 @Model
 class Diary: Identifiable {
-    let id = UUID()
+    let id: UUID
     var title: String
     var content: String
     var date: Date
@@ -26,6 +26,7 @@ class Diary: Identifiable {
     var image: Data?
 
     init(title: String, content: String, date: Date, weather: WheatherState? = nil, image: Data? = nil) {
+        self.id = UUID()
         self.title = title
         self.content = content
         self.date = date

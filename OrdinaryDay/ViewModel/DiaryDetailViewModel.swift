@@ -18,11 +18,13 @@ final class DiaryDetailViewModel: ObservableObject {
     @Published var selectedPhoto: PhotosPickerItem?
 
     private let swiftDataManager: SwiftDataManager
+    private let deleteAction: (Diary) -> Void
 
-    init(_ currentDiary: Diary) {
+    init(_ currentDiary: Diary, delete: @escaping (Diary) -> Void) {
         diary = currentDiary
         editingDiary = currentDiary
         swiftDataManager = SwiftDataManagerImpl()
+        deleteAction = delete
     }
 
     func startEditing() {
@@ -66,12 +68,7 @@ final class DiaryDetailViewModel: ObservableObject {
             }
             return
         }
-        switch swiftDataManager.removeDiary(diary: diary) {
-        case .success(_):
-            print("success to delete")
-        case .failure(let failure):
-            error = failure
-        }
+        deleteAction(diary)
         withAnimation(.easeInOut(duration: 0.1)) {
             isShowDeleteAlert = false
         }
