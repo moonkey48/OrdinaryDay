@@ -9,11 +9,11 @@ import CoreLocation
 import Foundation
 import WeatherKit
 
-protocol WeatherData {
+protocol WeatherManager {
     func get(_ location: CLLocation) async -> Weather?
 }
 
-class WeatherDataImpl: WeatherData {
+class WeatherManagerImpl: WeatherManager {
     private let weatherService = WeatherService()
 
     func get(_ location: CLLocation) async -> Weather? {

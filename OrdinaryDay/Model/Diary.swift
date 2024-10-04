@@ -11,7 +11,7 @@ enum Wheather: String {
     case sunny
     case cloudy
     case rainy
-    case wendy
+    case windy
     case snow
 }
 

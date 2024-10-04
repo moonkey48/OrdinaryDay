@@ -34,6 +34,14 @@ private extension NewDiaryView {
             Text("날씨")
             if let weather = viewModel.newDiary.weather {
                 Image("icon_\(weather.rawValue)")
+            } else {
+                Button {
+                    Task {
+                        await viewModel.setWeatherInfo()
+                    }
+                } label: {
+                    Image("icon_reload")
+                }
             }
         }
         .font(.customLargeTitle)
