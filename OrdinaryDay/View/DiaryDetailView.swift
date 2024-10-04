@@ -22,7 +22,7 @@ struct DiaryDetailView: View {
                 navigationBarView
                 dateWeatherView
                 ScrollView {
-                    if let _ = viewModel.diary.image {
+                    if let _ = viewModel.diary?.image {
                         addImageView
                     }
                     titleView
@@ -61,10 +61,10 @@ private extension DiaryDetailView {
     @ViewBuilder
     var dateWeatherView: some View {
         HStack {
-            Text(viewModel.diary.monthDayWeek)
+            Text(viewModel.diary?.monthDayWeek ?? "")
             Spacer()
             Text("날씨")
-            if let weather = viewModel.diary.weather {
+            if let weather = viewModel.diary?.weather {
                 Image("icon_\(weather.rawValue)")
             }
         }
@@ -82,7 +82,7 @@ private extension DiaryDetailView {
                 Image("box_clear")
                     .resizable()
                     .scaledToFit()
-                if let imageData = viewModel.diary.image,
+                if let imageData = viewModel.diary?.image,
                    let uiImage = UIImage(data: imageData)
                 {
                     Image(uiImage: uiImage)
@@ -121,7 +121,7 @@ private extension DiaryDetailView {
                 .multilineTextAlignment(.leading)
         } else {
             HStack {
-                Text(viewModel.diary.title)
+                Text(viewModel.diary?.title ?? "")
                     .font(.customLargeTitle)
                     .lineLimit(2)
                 Spacer()
@@ -148,7 +148,7 @@ private extension DiaryDetailView {
                           .font(.customTitle)
                           .lineSpacing(30)
                 } else {
-                    Text(viewModel.diary.content)
+                    Text(viewModel.diary?.content ?? "")
                         .font(.customTitle)
                         .lineSpacing(30)
                         .padding(8)

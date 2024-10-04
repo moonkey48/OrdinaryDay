@@ -8,17 +8,23 @@
 import SwiftData
 import SwiftUI
 
+enum DataError: Error {
+    case networkError
+    case typeError
+    case unknown
+}
+
 protocol SwiftDataManager {
     func getAllDiary() -> [Diary]
     func getDiary(id: UUID) -> Diary?
-    func removeDiary(id: UUID) -> Bool
-    func updateDiary(diary: Diary) -> Bool
+    func removeDiary(diary: Diary) -> Result<Bool, DataError>
+    func updateDiary(diary: Diary) -> Result<Bool, DataError>
     func createDiary(
         title: String,
         content: String,
         weather: WheatherState?,
         image: UIImage?
-    ) -> Bool
+    ) -> Result<Bool, DataError>
 }
 
 final class SwiftDataManagerImpl: SwiftDataManager {
@@ -36,11 +42,11 @@ final class SwiftDataManagerImpl: SwiftDataManager {
 
     func getAllDiary() -> [Diary] {
         guard let context else { return [] }
-        var predicate = #Predicate<Diary> { diary in
+        let predicate = #Predicate<Diary> { diary in
             true
         }
 
-        var descriptor = FetchDescriptor(predicate: predicate)
+        let descriptor = FetchDescriptor(predicate: predicate)
         do {
             return try context.fetch(descriptor)
         } catch {
@@ -53,12 +59,16 @@ final class SwiftDataManagerImpl: SwiftDataManager {
         return nil
     }
     
-    func removeDiary(id: UUID) -> Bool {
-        return true
+    func removeDiary(diary: Diary) -> Result<Bool, DataError> {
+        guard let context else { return .failure(.unknown) }
+        context.delete(diary)
+        return .success(true)
     }
     
-    func updateDiary(diary: Diary) -> Bool {
-        return true
+    func updateDiary(diary: Diary) -> Result<Bool, DataError> {
+        guard let context else { return .failure(.typeError) }
+        context.insert(diary)
+        return .success(true)
     }
     
     func createDiary(
@@ -66,10 +76,11 @@ final class SwiftDataManagerImpl: SwiftDataManager {
         content: String,
         weather: WheatherState? = nil,
         image: UIImage? = nil
-    ) -> Bool {
+    ) -> Result<Bool, DataError> {
+        guard let context else { return .failure(.unknown) }
         let diary = Diary(title: title, content: content, date: Date.now, weather: weather, image: image?.pngData())
-        context?.insert(diary)
-        return true
+        context.insert(diary)
+        return .success(true)
     }
     
 

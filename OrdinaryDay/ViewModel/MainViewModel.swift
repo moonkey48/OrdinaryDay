@@ -12,6 +12,7 @@ import WeatherKit
 @MainActor
 final class MainViewModel: ObservableObject{
     @Published var isNewDiary = false
+    @Published var error: DataError?
     @Published var diaryList: [Diary] = []
     @Published var selectedPhoto: PhotosPickerItem?
     @Published var newTitle = ""
@@ -26,7 +27,7 @@ final class MainViewModel: ObservableObject{
     init() {
         Task {
             await setWeatherInfo()
-            diaryList = swiftDataManager.getAllDiary()
+            fetchDiaryList()
         }
     }
 
@@ -52,18 +53,23 @@ final class MainViewModel: ObservableObject{
         }
     }
 
+    func fetchDiaryList() {
+        diaryList = swiftDataManager.getAllDiary()
+    }
+
+
     func addNewDiary() {
-        // TODO: SwiftData로 변경
         let result = swiftDataManager.createDiary(
             title: newTitle,
             content: newContent,
             weather: currentWeather,
             image: newImage)
-        print(result)
-//        newDiary.image = newImage?.pngData()
-//        diaryList.append(newDiary)
-//        newDiary = Diary(title: "", content: "", date: Date(), weather: .windy)
-        
+        switch result {
+        case .success(_):
+            fetchDiaryList()
+        case .failure(let failure):
+            error = failure
+        }
     }
 
     func convertPhoto() {
