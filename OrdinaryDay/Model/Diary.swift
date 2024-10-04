@@ -11,6 +11,7 @@ import SwiftData
 enum WheatherState: String, Codable {
     case sunny
     case cloudy
+    case partlyCloudy
     case rainy
     case windy
     case snow

@@ -21,13 +21,13 @@ final class MainViewModel: ObservableObject{
     @Published var newDate: Date = Date.now
     @Published var newImage: UIImage?
 
-    let weatherManager: WeatherManager = WeatherManagerImpl()
+    private let weatherManager: WeatherManager = WeatherManagerImpl()
     private let swiftDataManager: SwiftDataManager = SwiftDataManagerImpl()
 
     init() {
         Task {
-            await setWeatherInfo()
             fetchDiaryList()
+            await setWeatherInfo()
         }
     }
 
@@ -43,8 +43,10 @@ final class MainViewModel: ObservableObject{
                 currentWeather = .snow
             case .clear, .breezy, .mostlyClear, .hot, .sunFlurries, .sunShowers:
                 currentWeather = .sunny
-            case .cloudy, .foggy, .haze, .mostlyCloudy, .partlyCloudy, .smoky:
+            case .cloudy, .foggy, .haze, .mostlyCloudy, .smoky:
                 currentWeather = .cloudy
+            case .partlyCloudy:
+                currentWeather = .partlyCloudy
             case .rain, .hail, .drizzle, .freezingDrizzle, .freezingRain, .heavyRain, .scatteredThunderstorms, .thunderstorms, .tropicalStorm:
                 currentWeather = .rainy
             default:

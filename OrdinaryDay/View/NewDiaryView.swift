@@ -31,7 +31,7 @@ private extension NewDiaryView {
         HStack {
             Text(viewModel.newDate.monthDayWeek)
             Spacer()
-            Text("날씨")
+            Text("날씨:")
             if let weather = viewModel.currentWeather {
                 Image("icon_\(weather.rawValue)")
             } else {

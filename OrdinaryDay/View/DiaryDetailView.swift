@@ -66,7 +66,7 @@ private extension DiaryDetailView {
         HStack {
             Text(viewModel.diary?.monthDayWeek ?? "")
             Spacer()
-            Text("날씨")
+            Text("날씨:")
             if let weather = viewModel.diary?.weather {
                 Image("icon_\(weather.rawValue)")
             }
@@ -100,7 +100,7 @@ private extension DiaryDetailView {
                     Image("box_clear")
                         .resizable()
                         .scaledToFit()
-                    if let imageData = viewModel.editingDiary.image,
+                    if let imageData = viewModel.editingImage,
                        let uiImage = UIImage(data: imageData) {
                         Image(uiImage: uiImage)
                             .resizable()
@@ -118,7 +118,7 @@ private extension DiaryDetailView {
     @ViewBuilder
     var titleView: some View {
         if viewModel.isEdit {
-            TextField("", text: $viewModel.editingDiary.title, axis: .vertical)
+            TextField("", text: $viewModel.editingTitle, axis: .vertical)
                 .font(.customLargeTitle)
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
@@ -146,7 +146,7 @@ private extension DiaryDetailView {
             .padding(.top, 60)
             VStack {
                 if viewModel.isEdit {
-                    TextEditor(text: $viewModel.editingDiary.content)
+                    TextEditor(text: $viewModel.editingContent)
                         .scrollContentBackground(.hidden)
                           .font(.customTitle)
                           .lineSpacing(30)

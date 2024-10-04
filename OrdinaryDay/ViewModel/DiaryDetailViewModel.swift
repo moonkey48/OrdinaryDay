@@ -14,15 +14,16 @@ final class DiaryDetailViewModel: ObservableObject {
     @Published var error: DataError?
     @Published var isEdit = false
     @Published var isShowDeleteAlert = false
-    @Published var editingDiary: Diary
     @Published var selectedPhoto: PhotosPickerItem?
+    @Published var editingTitle = ""
+    @Published var editingContent = ""
+    @Published var editingImage: Data?
 
     private let swiftDataManager: SwiftDataManager
     private let deleteAction: (Diary) -> Void
 
     init(_ currentDiary: Diary, delete: @escaping (Diary) -> Void) {
         diary = currentDiary
-        editingDiary = currentDiary
         swiftDataManager = SwiftDataManagerImpl()
         deleteAction = delete
     }
@@ -30,16 +31,30 @@ final class DiaryDetailViewModel: ObservableObject {
     func startEditing() {
         isEdit = true
         guard let diary else { return }
-        editingDiary = diary
+        editingTitle = diary.title
+        editingContent = diary.content
+        if let imageData = diary.image {
+            editingImage = imageData
+        }
     }
     
     func cancelEditing() {
+        resetEditingProperty()
         isEdit = false
+    }
+
+    func resetEditingProperty() {
+        editingTitle = ""
+        editingContent = ""
+        editingImage = nil
     }
 
     func updateDiary() {
         guard let diary else { return }
-        self.diary = editingDiary
+        diary.title = editingTitle
+        diary.content = editingContent
+        diary.image = editingImage
+        resetEditingProperty()
         switch swiftDataManager.updateDiary(diary: diary) {
         case .success(_):
             print("success to update")
@@ -77,7 +92,7 @@ final class DiaryDetailViewModel: ObservableObject {
     func convertPhoto() {
         Task {
             if let imageData = try? await selectedPhoto?.loadTransferable(type: Data.self) {
-                editingDiary.image = imageData
+                editingImage = imageData
             }
         }
     }
