@@ -29,10 +29,10 @@ private extension NewDiaryView {
     @ViewBuilder
     var dateWeatherView: some View {
         HStack {
-            Text(viewModel.newDiary.monthDayWeek)
+            Text(viewModel.newDate.monthDayWeek)
             Spacer()
             Text("날씨")
-            if let weather = viewModel.newDiary.weather {
+            if let weather = viewModel.currentWeather {
                 Image("icon_\(weather.rawValue)")
             } else {
                 Button {
@@ -76,7 +76,7 @@ private extension NewDiaryView {
     var titleView: some View {
         Text("일기 제목")
             .font(.customTitle3)
-        TextField("", text: $viewModel.newDiary.title, axis: .vertical)
+        TextField("", text: $viewModel.newTitle, axis: .vertical)
             .font(.customLargeTitle)
             .lineLimit(2)
         Image("divider")
@@ -96,7 +96,7 @@ private extension NewDiaryView {
             }
             .padding(.top, 60)
             VStack {
-                TextEditor(text: $viewModel.newDiary.content)
+                TextEditor(text: $viewModel.newContent)
                     .scrollContentBackground(.hidden)
                       .font(.customTitle)
                       .lineSpacing(30)

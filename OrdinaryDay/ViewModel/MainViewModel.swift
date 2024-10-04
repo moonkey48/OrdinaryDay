@@ -13,46 +13,57 @@ import WeatherKit
 final class MainViewModel: ObservableObject{
     @Published var isNewDiary = false
     @Published var diaryList: [Diary] = []
-    @Published var newImage: UIImage?
     @Published var selectedPhoto: PhotosPickerItem?
-    @Published var newDiary = Diary(title: "", content: "", date: Date())
+    @Published var newTitle = ""
+    @Published var newContent = ""
+    @Published var currentWeather: WheatherState?
+    @Published var newDate: Date = Date.now
+    @Published var newImage: UIImage?
 
-    @Published private var weather: Weather?
-    let weatherData: WeatherManager = WeatherManagerImpl()
+    let weatherManager: WeatherManager = WeatherManagerImpl()
+    let swiftDataManager: SwiftDataManager = SwiftDataManagerImpl()
 
     init() {
         Task {
             await setWeatherInfo()
+            diaryList = swiftDataManager.getAllDiary()
         }
     }
 
     func setWeatherInfo() async {
         let currentLocation = CLLocation(latitude: 36.0190178, longitude: 129.3434808)
 
-        let weather = await weatherData.get(currentLocation)
+        let weather = await weatherManager.get(currentLocation)
         if let weather {
             switch weather.currentWeather.condition {
             case .windy, .wintryMix, .blowingDust, .flurries, .hurricane, .isolatedThunderstorms, .strongStorms:
-                newDiary.weather = .windy
+                currentWeather = .windy
             case .snow, .blowingSnow, .frigid, .blizzard, .heavySnow, .sleet:
-                newDiary.weather = .snow
+                currentWeather = .snow
             case .clear, .breezy, .mostlyClear, .hot, .sunFlurries, .sunShowers:
-                newDiary.weather = .sunny
+                currentWeather = .sunny
             case .cloudy, .foggy, .haze, .mostlyCloudy, .partlyCloudy, .smoky:
-                newDiary.weather = .cloudy
+                currentWeather = .cloudy
             case .rain, .hail, .drizzle, .freezingDrizzle, .freezingRain, .heavyRain, .scatteredThunderstorms, .thunderstorms, .tropicalStorm:
-                newDiary.weather = .rainy
+                currentWeather = .rainy
             default:
-                newDiary.weather = .none
+                currentWeather = .none
             }
         }
     }
 
     func addNewDiary() {
         // TODO: SwiftData로 변경
-        newDiary.image = newImage?.pngData()
-        diaryList.append(newDiary)
-        newDiary = Diary(title: "", content: "", date: Date(), weather: .windy)
+        let result = swiftDataManager.createDiary(
+            title: newTitle,
+            content: newContent,
+            weather: currentWeather,
+            image: newImage)
+        print(result)
+//        newDiary.image = newImage?.pngData()
+//        diaryList.append(newDiary)
+//        newDiary = Diary(title: "", content: "", date: Date(), weather: .windy)
+        
     }
 
     func convertPhoto() {

@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftData
 
-enum Wheather: String {
+enum WheatherState: String, Codable {
     case sunny
     case cloudy
     case rainy
@@ -15,13 +16,22 @@ enum Wheather: String {
     case snow
 }
 
-struct Diary: Identifiable {
+@Model
+class Diary: Identifiable {
     let id = UUID()
     var title: String
     var content: String
     var date: Date
-    var weather: Wheather?
+    var weather: WheatherState?
     var image: Data?
+
+    init(title: String, content: String, date: Date, weather: WheatherState? = nil, image: Data? = nil) {
+        self.title = title
+        self.content = content
+        self.date = date
+        self.weather = weather
+        self.image = image
+    }
 }
 
 extension Diary {
