@@ -54,15 +54,17 @@ private extension NewDiaryView {
             .font(.customTitle3)
         PhotosPicker(selection: $viewModel.selectedPhoto) {
             ZStack {
-                Image("box_clear")
-                    .resizable()
-                    .scaledToFit()
                 if let image = viewModel.newImage {
                     Image(uiImage: image)
                         .resizable()
                         .scaledToFill()
-                        .frame(width: 300, height: 100)
+                        .frame(maxWidth: .infinity)
+                        .frame(maxHeight: 200)
                         .clipped()
+                } else {
+                    Image("box_clear")
+                        .resizable()
+                        .scaledToFit()
                 }
             }
         }

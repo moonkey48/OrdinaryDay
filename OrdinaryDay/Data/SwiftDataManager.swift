@@ -45,8 +45,7 @@ final class SwiftDataManagerImpl: SwiftDataManager {
         let predicate = #Predicate<Diary> { diary in
             true
         }
-
-        let descriptor = FetchDescriptor(predicate: predicate)
+        let descriptor = FetchDescriptor(predicate: predicate, sortBy: [SortDescriptor(\.date, order: .reverse)])
         do {
             return try context.fetch(descriptor)
         } catch {

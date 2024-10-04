@@ -91,23 +91,26 @@ private extension DiaryDetailView {
                     Image(uiImage: uiImage)
                         .resizable()
                         .scaledToFill()
-                        .frame(width: 300, height: 100)
+                        .frame(maxWidth: .infinity)
+                        .frame(maxHeight: 200)
                         .clipped()
                 }
             }
         } else {
             PhotosPicker(selection: $viewModel.selectedPhoto) {
                 ZStack {
-                    Image("box_clear")
-                        .resizable()
-                        .scaledToFit()
                     if let imageData = viewModel.editingImage,
                        let uiImage = UIImage(data: imageData) {
                         Image(uiImage: uiImage)
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 300, height: 100)
+                            .frame(maxWidth: .infinity)
+                            .frame(maxHeight: 200)
                             .clipped()
+                    } else {
+                        Image("box_clear")
+                            .resizable()
+                            .scaledToFit()
                     }
                 }
             }
@@ -153,12 +156,10 @@ private extension DiaryDetailView {
                     TextField("", text: $viewModel.editingContent, axis: .vertical)
                         .font(.customTitle)
                         .lineSpacing(30)
-                        .background(.blue)
                 } else {
                     Text(viewModel.diary?.content ?? "")
                         .font(.customTitle)
                         .lineSpacing(30)
-                        .background(.red)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 Spacer()

@@ -48,7 +48,7 @@ private extension MainView {
         ScrollView {
             ForEach(viewModel.diaryList) { diary in
                 NavigationLink {
-                    DiaryDetailView(diary: diary, deleteAction: viewModel.deleteDiary(diary:))
+                    DiaryDetailView(diary: diary, deleteAction: viewModel.deleteDiary)
                 } label: {
                     VStack(alignment: .leading) {
                         HStack {
