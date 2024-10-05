@@ -31,17 +31,14 @@ struct MainView: View {
 
 private extension MainView {
     var headerView: some View {
-        HStack(alignment: .bottom) {
+        HStack(alignment: .center) {
             Text("보통의 하루")
-                .font(.customXLargeTitle)
-                .padding()
+                .font(.customHeavyTitle)
+                .padding(.leading)
             Spacer()
             Image("character_small")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 170)
+                .ignoresSafeArea()
         }
-        .ignoresSafeArea()
     }
 
     var diaryListView: some View {
@@ -50,15 +47,18 @@ private extension MainView {
                 NavigationLink {
                     DiaryDetailView(diary: diary, deleteAction: viewModel.deleteDiary)
                 } label: {
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .center) {
                         HStack {
-                            Text(diary.title)
-                                .font(.customLargeTitle)
-                                .lineLimit(2)
-                                .multilineTextAlignment(.leading)
+                            VStack(alignment: .leading) {
+                                Text(diary.title)
+                                    .font(.customLargeTitle)
+                                    .lineLimit(1)
+                                    .multilineTextAlignment(.leading)
+                                Text(diary.monthDayWeek)
+                                    .font(.customTitle3)
+                            }
                             Spacer()
-                            Text(diary.monthDayWeek)
-                                .font(.customTitle)
+                            Image("icon_arrowRight")
                         }
                         Image("divider")
                             .resizable()
@@ -69,6 +69,7 @@ private extension MainView {
 
             }
         }
+        .scrollIndicators(.hidden)
     }
 
     var emptyDiaryPlaceholderView: some View {
@@ -96,6 +97,7 @@ private extension MainView {
                         .foregroundStyle(.white)
                 }
             }
+            .padding(.bottom, 20)
         }
     }
 }
