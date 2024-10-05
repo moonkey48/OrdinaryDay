@@ -14,10 +14,42 @@
             filePath = "OrdinaryDay/ViewModel/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "deleteDiary(diary:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "06695412-E018-4522-9B00-559D57866531 - 19b923289b77477f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OrdinaryDay.MainViewModel.deleteDiary(diary: OrdinaryDay.Diary) -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "06695412-E018-4522-9B00-559D57866531 - 19b923289b77477f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OrdinaryDay.MainViewModel.deleteDiary(diary: OrdinaryDay.Diary) -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "220">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -30,10 +62,105 @@
             filePath = "OrdinaryDay/ViewModel/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "deleteDiary(diary:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "588FED7E-9B1B-403B-BC23-2F654237049B - 19b923289b774403"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OrdinaryDay.MainViewModel.deleteDiary(diary: OrdinaryDay.Diary) -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "372">
+               </Location>
+               <Location
+                  uuid = "588FED7E-9B1B-403B-BC23-2F654237049B - 19b923289b7744e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OrdinaryDay.MainViewModel.deleteDiary(diary: OrdinaryDay.Diary) -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "372">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD671915-B7B0-4250-9F91-153E0C8F6730"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrdinaryDay/ViewModel/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "loadImage(url:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DD671915-B7B0-4250-9F91-153E0C8F6730 - 44d599d0bab347a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in OrdinaryDay.MainViewModel.loadImage(url: Foundation.URL) -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "488">
+               </Location>
+               <Location
+                  uuid = "DD671915-B7B0-4250-9F91-153E0C8F6730 - d44c935475c6df65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable () -&gt; () in OrdinaryDay.MainViewModel.loadImage(url: Foundation.URL) -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "DD671915-B7B0-4250-9F91-153E0C8F6730 - d44c935475c6dfc8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable () -&gt; () in OrdinaryDay.MainViewModel.loadImage(url: Foundation.URL) -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

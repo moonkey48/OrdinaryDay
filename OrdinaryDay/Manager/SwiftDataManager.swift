@@ -16,7 +16,6 @@ enum DataError: Error {
 
 protocol SwiftDataManager {
     func getAllDiary() -> [Diary]
-    func getDiary(id: UUID) -> Diary?
     func removeDiary(diary: Diary) -> Result<Bool, DataError>
     func updateDiary(diary: Diary) -> Result<Bool, DataError>
     func createDiary(
@@ -54,10 +53,6 @@ final class SwiftDataManagerImpl: SwiftDataManager {
         }
     }
     
-    func getDiary(id: UUID) -> Diary? {
-        return nil
-    }
-    
     func removeDiary(diary: Diary) -> Result<Bool, DataError> {
         guard let context else { return .failure(.unknown) }
         context.delete(diary)
@@ -81,6 +76,4 @@ final class SwiftDataManagerImpl: SwiftDataManager {
         context.insert(diary)
         return .success(true)
     }
-    
-
 }

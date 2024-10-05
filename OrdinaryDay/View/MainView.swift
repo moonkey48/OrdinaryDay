@@ -55,6 +55,7 @@ private extension MainView {
                             Text(diary.title)
                                 .font(.customLargeTitle)
                                 .lineLimit(2)
+                                .multilineTextAlignment(.leading)
                             Spacer()
                             Text(diary.monthDayWeek)
                                 .font(.customTitle)

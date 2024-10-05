@@ -5,6 +5,7 @@
 //  Created by Austin's Macbook Pro M3 on 10/3/24.
 //
 
+import Combine
 import SwiftUI
 import PhotosUI
 import WeatherKit
@@ -20,19 +21,38 @@ final class MainViewModel: ObservableObject{
     @Published var currentWeather: WheatherState?
     @Published var newDate: Date = Date.now
     @Published var newImage: UIImage?
+    @Published var attributionLink: URL?
+    @Published var weatherAppleLogo: UIImage?
+    @Published var colorScheme: ColorScheme?
 
     private let weatherManager: WeatherManager = WeatherManagerImpl()
     private let swiftDataManager: SwiftDataManager = SwiftDataManagerImpl()
+    private let locationMananger: LocationManager = LocationManagerImpl()
 
     init() {
         Task {
             fetchDiaryList()
-            await setWeatherInfo()
+            locationMananger.auth()
         }
     }
 
     func setWeatherInfo() async {
-        let currentLocation = CLLocation(latitude: 36.0190178, longitude: 129.3434808)
+
+        guard let currentLocation = locationMananger.getLocation() else {
+            locationMananger.auth()
+            currentWeather = .none
+            return
+        }
+        guard let attribution = try? await weatherManager.getAttribution(),
+              let colorScheme
+        else {
+            currentWeather = .none
+            return
+        }
+        attributionLink = attribution.legalPageURL
+        let attributionLogoURL = colorScheme == .light ? attribution.combinedMarkLightURL : attribution.combinedMarkDarkURL
+
+        loadImage(url: attributionLogoURL)
 
         let weather = await weatherManager.get(currentLocation)
         if let weather {
@@ -100,3 +120,16 @@ final class MainViewModel: ObservableObject{
     }
 }
 
+private extension MainViewModel {
+    func loadImage(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.weatherAppleLogo = image
+                    }
+                }
+            }
+        }
+    }
+}

@@ -9,6 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct NewDiaryView: View {
+    @Environment(\.colorScheme) var colorScheme
     @ObservedObject var viewModel: MainViewModel
 
     var body: some View {
@@ -22,25 +23,44 @@ struct NewDiaryView: View {
             buttonsView
         }
         .padding()
+        .onAppear {
+            viewModel.colorScheme = colorScheme
+            Task {
+                await viewModel.setWeatherInfo()
+            }
+        }
     }
 }
 
 private extension NewDiaryView {
     @ViewBuilder
     var dateWeatherView: some View {
-        HStack {
+        HStack(alignment: .top) {
             Text(viewModel.newDate.monthDayWeek)
             Spacer()
-            Text("날씨:")
-            if let weather = viewModel.currentWeather {
-                Image("icon_\(weather.rawValue)")
-            } else {
-                Button {
-                    Task {
-                        await viewModel.setWeatherInfo()
+            VStack(alignment: .trailing, spacing: 0) {
+                HStack {
+                    Text("날씨:")
+                    if let weather = viewModel.currentWeather {
+                        Image("icon_\(weather.rawValue)")
+                    } else {
+                        Button {
+                            Task {
+                                await viewModel.setWeatherInfo()
+                            }
+                        } label: {
+                            Image("icon_reload")
+                        }
                     }
-                } label: {
-                    Image("icon_reload")
+                }
+                if let uiImage = viewModel.weatherAppleLogo,
+                   let weatherLink = viewModel.attributionLink{
+                    Link(destination: weatherLink, label: {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50)
+                    })
                 }
             }
         }
