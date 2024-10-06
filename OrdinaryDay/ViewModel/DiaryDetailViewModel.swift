@@ -20,6 +20,7 @@ final class DiaryDetailViewModel {
     var editingImage: Data?
 
     private let swiftDataManager: SwiftDataManager
+    private let hapticManager: HapticManager? = HapticManagerImpl()
     private let deleteAction: (Diary) -> Void
 
     init(_ currentDiary: Diary, delete: @escaping (Diary) -> Void) {
@@ -28,7 +29,19 @@ final class DiaryDetailViewModel {
         deleteAction = delete
     }
 
+    func onAppear() {
+        onTapButton()
+    }
+
+    func onTapButton() {
+        hapticManager?.startHaptic(
+            intensity: HapticManagerImpl.defaultIntensity,
+            sharpness: HapticManagerImpl.defaultSharpness
+        )
+    }
+
     func startEditing() {
+        onTapButton()
         isEdit = true
         guard let diary else { return }
         editingTitle = diary.title
@@ -39,6 +52,7 @@ final class DiaryDetailViewModel {
     }
     
     func cancelEditing() {
+        onTapButton()
         resetEditingProperty()
         isEdit = false
     }
@@ -65,12 +79,14 @@ final class DiaryDetailViewModel {
     }
 
     func showDeleteAlert() {
+        onTapButton()
         withAnimation(.easeInOut(duration: 0.3)) {
             isShowDeleteAlert = true
         }
     }
 
     func cancelDeleteDiary() {
+        onTapButton()
         withAnimation(.easeInOut(duration: 0.1)) {
             isShowDeleteAlert = false
         }

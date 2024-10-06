@@ -40,6 +40,9 @@ struct DiaryDetailView: View {
             }
         }
         .navigationBarBackButtonHidden()
+        .onAppear {
+            viewModel.onAppear()
+        }
     }
 }
 
@@ -82,9 +85,6 @@ private extension DiaryDetailView {
             .font(.customTitle3)
         if !viewModel.isEdit {
             ZStack {
-                Image("box_clear")
-                    .resizable()
-                    .scaledToFit()
                 if let imageData = viewModel.diary?.image,
                    let uiImage = UIImage(data: imageData)
                 {
@@ -94,6 +94,10 @@ private extension DiaryDetailView {
                         .frame(maxWidth: .infinity)
                         .frame(maxHeight: 200)
                         .clipped()
+                } else {
+                    Image("box_clear")
+                        .resizable()
+                        .scaledToFit()
                 }
             }
         } else {

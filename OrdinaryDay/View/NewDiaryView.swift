@@ -45,6 +45,7 @@ private extension NewDiaryView {
                         Image("icon_\(weather.rawValue)")
                     } else {
                         Button {
+                            viewModel.onTapButton()
                             Task {
                                 await viewModel.setWeatherInfo()
                             }
@@ -130,6 +131,7 @@ private extension NewDiaryView {
     var buttonsView: some View {
         HStack {
             Button {
+                viewModel.onTapButton()
                 viewModel.isNewDiary = false
             } label: {
                 ZStack {
@@ -140,6 +142,7 @@ private extension NewDiaryView {
                 }
             }
             Button {
+                viewModel.onTapButton()
                 viewModel.addNewDiary()
                 viewModel.isNewDiary = false
             } label: {

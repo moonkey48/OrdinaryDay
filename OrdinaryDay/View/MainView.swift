@@ -46,6 +46,13 @@ private extension MainView {
             ForEach(viewModel.diaryList) { diary in
                 NavigationLink {
                     DiaryDetailView(diary: diary, deleteAction: viewModel.deleteDiary)
+                        .simultaneousGesture(
+                            TapGesture()
+                                .onEnded {
+                                    viewModel.onTapButton()
+                                }
+                        )
+                        .buttonStyle(PlainButtonStyle())
                 } label: {
                     VStack(alignment: .center) {
                         HStack {
