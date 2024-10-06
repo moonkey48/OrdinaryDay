@@ -8,8 +8,16 @@
 import SwiftUI
 import PhotosUI
 
+private extension NewDiaryView {
+    enum FocusField: Hashable {
+        case title
+        case content
+    }
+}
+
 struct NewDiaryView: View {
     @Environment(\.colorScheme) var colorScheme
+    @FocusState private var focusedField: FocusField?
     @ObservedObject var viewModel: MainViewModel
 
     var body: some View {
@@ -25,6 +33,7 @@ struct NewDiaryView: View {
         .padding()
         .onAppear {
             viewModel.colorScheme = colorScheme
+            focusedField = .title
             Task {
                 await viewModel.setWeatherInfo()
             }
@@ -92,6 +101,7 @@ private extension NewDiaryView {
         .onChange(of: viewModel.selectedPhoto) { _, _ in
             viewModel.convertPhoto()
         }
+        .padding(.bottom, 30)
 
     }
 
@@ -102,7 +112,9 @@ private extension NewDiaryView {
         TextField("", text: $viewModel.newTitle, axis: .vertical)
             .font(.customLargeTitle)
             .lineLimit(2)
+            .focused($focusedField, equals: .title)
         Image("divider")
+            .padding(.bottom, 30)
     }
 
     @ViewBuilder
@@ -122,6 +134,7 @@ private extension NewDiaryView {
                 TextField("", text: $viewModel.newContent, axis: .vertical)
                     .font(.customTitle)
                     .lineSpacing(30)
+                    .focused($focusedField, equals: .content)
                 Spacer()
             }
         }

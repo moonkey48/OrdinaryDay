@@ -8,8 +8,16 @@
 import SwiftUI
 import PhotosUI
 
+private extension DiaryDetailView {
+    enum FocusField: Hashable {
+        case title
+        case content
+    }
+}
+
 struct DiaryDetailView: View {
     @Environment(\.dismiss) private var dismiss
+    @FocusState private var focusedField: FocusField?
     @Bindable var viewModel: DiaryDetailViewModel
 
     init(diary: Diary, deleteAction: @escaping (Diary) -> Void) {
@@ -41,6 +49,7 @@ struct DiaryDetailView: View {
         }
         .navigationBarBackButtonHidden()
         .onAppear {
+            focusedField = .title
             viewModel.onAppear()
         }
     }
@@ -132,6 +141,7 @@ private extension DiaryDetailView {
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
                 .frame(height: 44)
+                .focused($focusedField, equals: .title)
         } else {
             HStack {
                 Text(viewModel.diary?.title ?? "")
@@ -160,6 +170,7 @@ private extension DiaryDetailView {
                     TextField("", text: $viewModel.editingContent, axis: .vertical)
                         .font(.customTitle)
                         .lineSpacing(30)
+                        .focused($focusedField, equals: .content)
                 } else {
                     Text(viewModel.diary?.content ?? "")
                         .font(.customTitle)
