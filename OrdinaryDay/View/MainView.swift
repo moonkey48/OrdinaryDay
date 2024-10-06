@@ -86,6 +86,7 @@ private extension MainView {
 
     var addDiaryButtonView: some View {
         Button {
+            viewModel.onTapButton()
             viewModel.isNewDiary = true
         } label: {
             ZStack {

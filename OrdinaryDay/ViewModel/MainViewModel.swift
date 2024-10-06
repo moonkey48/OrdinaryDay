@@ -28,6 +28,7 @@ final class MainViewModel: ObservableObject{
     private let weatherManager: WeatherManager = WeatherManagerImpl()
     private let swiftDataManager: SwiftDataManager = SwiftDataManagerImpl()
     private let locationMananger: LocationManager = LocationManagerImpl()
+    private let hapticManager: HapticManager? = HapticManagerImpl()
 
     init() {
         Task {
@@ -36,8 +37,13 @@ final class MainViewModel: ObservableObject{
         }
     }
 
-    func setWeatherInfo() async {
+    func onTapButton() {
+        hapticManager?.startHaptic(
+            intensity: HapticManagerImpl.defaultIntensity,
+            sharpness: HapticManagerImpl.defaultSharpness)
+    }
 
+    func setWeatherInfo() async {
         guard let currentLocation = locationMananger.getLocation() else {
             locationMananger.auth()
             currentWeather = .none
@@ -79,17 +85,14 @@ final class MainViewModel: ObservableObject{
         diaryList = swiftDataManager.getAllDiary()
     }
 
-    @MainActor
     func deleteDiary(diary: Diary) {
         switch swiftDataManager.removeDiary(diary: diary) {
         case .success(_):
-            print("success to delete")
             fetchDiaryList()
         case .failure(let failure):
             error = failure
         }
     }
-
 
     func addNewDiary() {
         let result = swiftDataManager.createDiary(

@@ -24,6 +24,7 @@
 		3A57E0252CAF8B6D0050CA0F /* SwiftDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57E0242CAF8B6C0050CA0F /* SwiftDataManager.swift */; };
 		3A57E0272CAF92780050CA0F /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57E0262CAF92780050CA0F /* Date+.swift */; };
 		3A60B0262CB00E7500F0B13A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A60B0252CB00E7500F0B13A /* LocationManager.swift */; };
+		3A7E49062CB242B40087754D /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E49052CB242B40087754D /* HapticManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		3A57E0242CAF8B6C0050CA0F /* SwiftDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataManager.swift; sourceTree = "<group>"; };
 		3A57E0262CAF92780050CA0F /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		3A60B0252CB00E7500F0B13A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		3A7E49052CB242B40087754D /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				3A57E0222CAF88860050CA0F /* WeatherManager.swift */,
 				3A57E0242CAF8B6C0050CA0F /* SwiftDataManager.swift */,
 				3A60B0252CB00E7500F0B13A /* LocationManager.swift */,
+				3A7E49052CB242B40087754D /* HapticManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A57E0272CAF92780050CA0F /* Date+.swift in Sources */,
+				3A7E49062CB242B40087754D /* HapticManager.swift in Sources */,
 				3A57E0172CAE6B690050CA0F /* DiaryDetailView.swift in Sources */,
 				3A57E0252CAF8B6D0050CA0F /* SwiftDataManager.swift in Sources */,
 				3A12E5012CAE306E009927E3 /* OnboardingView.swift in Sources */,
