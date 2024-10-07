@@ -19,11 +19,13 @@ final class MainViewModel: ObservableObject{
     @Published var newTitle = ""
     @Published var newContent = ""
     @Published var currentWeather: WheatherState?
+    @Published var userSetedWeather: WheatherState?
     @Published var newDate: Date = Date.now
     @Published var newImage: UIImage?
     @Published var attributionLink: URL?
     @Published var weatherAppleLogo: UIImage?
     @Published var colorScheme: ColorScheme?
+    @Published var showSelectWeather = false
 
     private let weatherManager: WeatherManager = WeatherManagerImpl()
     private let swiftDataManager: SwiftDataManager = SwiftDataManagerImpl()
@@ -43,7 +45,12 @@ final class MainViewModel: ObservableObject{
             sharpness: HapticManagerImpl.defaultSharpness)
     }
 
-    func setWeatherInfo() async {
+    func setWeatherInfoFromUser(_ weather: WheatherState) {
+        userSetedWeather = weather
+        showSelectWeather = false
+    }
+
+    func setWeatherInfoFromWeatherKit() async {
         guard let currentLocation = locationMananger.getLocation() else {
             locationMananger.auth()
             currentWeather = .none
@@ -98,7 +105,7 @@ final class MainViewModel: ObservableObject{
         let result = swiftDataManager.createDiary(
             title: newTitle,
             content: newContent,
-            weather: currentWeather,
+            weather: userSetedWeather,
             image: newImage)
         switch result {
         case .success(_):
@@ -109,6 +116,7 @@ final class MainViewModel: ObservableObject{
         newTitle = ""
         newContent = ""
         newImage = nil
+        userSetedWeather = nil
     }
 
     func convertPhoto() {

@@ -36,8 +36,19 @@ private extension MainView {
                 .font(.customHeavyTitle)
                 .padding(.leading)
             Spacer()
-            Image("character_small")
-                .ignoresSafeArea()
+            VStack(alignment: .trailing) {
+                Image("character_small")
+                    .ignoresSafeArea()
+                if let uiImage = viewModel.weatherAppleLogo,
+                   let weatherLink = viewModel.attributionLink{
+                    Link(destination: weatherLink, label: {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50)
+                    })
+                }
+            }
         }
     }
 

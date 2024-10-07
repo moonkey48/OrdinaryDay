@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-enum WheatherState: String, Codable {
+enum WheatherState: String, Codable, CaseIterable {
     case sunny
     case cloudy
     case partlyCloudy

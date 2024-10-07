@@ -31,12 +31,13 @@ struct NewDiaryView: View {
             buttonsView
         }
         .padding()
+        .sheet(isPresented: $viewModel.showSelectWeather) {
+            weatherSelectView
+                .presentationDetents([.height(160)])
+        }
         .onAppear {
             viewModel.colorScheme = colorScheme
             focusedField = .title
-            Task {
-                await viewModel.setWeatherInfo()
-            }
         }
     }
 }
@@ -50,27 +51,16 @@ private extension NewDiaryView {
             VStack(alignment: .trailing, spacing: 0) {
                 HStack {
                     Text("날씨:")
-                    if let weather = viewModel.currentWeather {
-                        Image("icon_\(weather.rawValue)")
-                    } else {
-                        Button {
-                            viewModel.onTapButton()
-                            Task {
-                                await viewModel.setWeatherInfo()
-                            }
-                        } label: {
-                            Image("icon_reload")
+                    Button {
+                        viewModel.onTapButton()
+                        viewModel.showSelectWeather = true
+                    } label: {
+                        if let weather = viewModel.userSetedWeather {
+                            Image("icon_\(weather.rawValue)")
+                        } else {
+                            Image("icon_black_small")
                         }
                     }
-                }
-                if let uiImage = viewModel.weatherAppleLogo,
-                   let weatherLink = viewModel.attributionLink{
-                    Link(destination: weatherLink, label: {
-                        Image(uiImage: uiImage)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50)
-                    })
                 }
             }
         }
@@ -169,5 +159,26 @@ private extension NewDiaryView {
         }
         .font(.customTitle)
         .foregroundStyle(.white)
+    }
+
+    private var gridItems: [GridItem] {
+        [ 
+            GridItem(.adaptive(minimum: 100, maximum: 200)),
+            GridItem(.adaptive(minimum: 100, maximum: 200)),
+            GridItem(.adaptive(minimum: 100, maximum: 200))
+        ]
+    }
+
+    var weatherSelectView: some View {
+        LazyVGrid(columns: gridItems, spacing: 30) {
+            ForEach(WheatherState.allCases, id: \.rawValue) { weather in
+                Button {
+                    viewModel.onTapButton()
+                    viewModel.setWeatherInfoFromUser(weather)
+                } label: {
+                    Image("icon_\(weather)")
+                }
+            }
+        }
     }
 }

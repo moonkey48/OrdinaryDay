@@ -192,7 +192,7 @@ private extension DiaryDetailView {
                     Image("button_small_orange")
                         .resizable()
                         .scaledToFit()
-                    Text("지우기")
+                    Text("지울래")
                 }
             }
             Button {
@@ -202,7 +202,7 @@ private extension DiaryDetailView {
                     Image("button_small_green")
                         .resizable()
                         .scaledToFit()
-                    Text("다시 쓰기")
+                    Text("수정할래")
                 }
             }
         }
@@ -219,7 +219,7 @@ private extension DiaryDetailView {
                     Image("button_small_orange")
                         .resizable()
                         .scaledToFit()
-                    Text("취소")
+                    Text("취소할래")
                 }
             }
             Button {
@@ -229,7 +229,7 @@ private extension DiaryDetailView {
                     Image("button_small_green")
                         .resizable()
                         .scaledToFit()
-                    Text("수정 완료")
+                    Text("수정했어")
                 }
             }
         }
@@ -247,7 +247,7 @@ private extension DiaryDetailView {
             Image("box_alert")
             VStack {
                 Spacer()
-                Text("정말 일기를\n지우시겠어요?")
+                Text("정말 일기를\n지울꺼야?")
                     .font(.customTitle)
                 Spacer()
                 HStack {
@@ -255,7 +255,7 @@ private extension DiaryDetailView {
                         viewModel.cancelDeleteDiary()
                     } label: {
                         ZStack {
-                            Image("button_small_orange")
+                            Image("button_small_green")
                                 .resizable()
                                 .scaledToFit()
                             Text("아니야")
@@ -266,10 +266,10 @@ private extension DiaryDetailView {
                         viewModel.deleteDiary()
                     } label: {
                         ZStack {
-                            Image("button_small_green")
+                            Image("button_small_orange")
                                 .resizable()
                                 .scaledToFit()
-                            Text("지우기")
+                            Text("지울래")
                         }
                     }
                 }
