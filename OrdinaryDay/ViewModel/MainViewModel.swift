@@ -36,6 +36,7 @@ final class MainViewModel: ObservableObject{
         Task {
             fetchDiaryList()
             locationMananger.auth()
+            await setWeatherInfoFromWeatherKit()
         }
     }
 

@@ -37,6 +37,7 @@ private extension MainView {
                 .padding(.leading)
             Spacer()
             VStack(alignment: .trailing) {
+                
                 Image("character_small")
                     .ignoresSafeArea()
                 if let uiImage = viewModel.weatherAppleLogo,
