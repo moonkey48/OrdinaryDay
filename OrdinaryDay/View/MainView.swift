@@ -33,23 +33,55 @@ private extension MainView {
     var headerView: some View {
         HStack(alignment: .center) {
             Text("보통의 하루")
-                .font(.customHeavyTitle)
+                .font(.customXLargeTitle)
                 .padding(.leading)
             Spacer()
-            VStack(alignment: .trailing) {
-                
-                Image("character_small")
-                    .ignoresSafeArea()
-                if let uiImage = viewModel.weatherAppleLogo,
-                   let weatherLink = viewModel.attributionLink{
-                    Link(destination: weatherLink, label: {
-                        Image(uiImage: uiImage)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50)
-                    })
-                }
-            }
+            Image("character_small")
+                .ignoresSafeArea()
+//            if let currentWeather = viewModel.currentWeather {
+//                VStack(alignment: .trailing) {
+//                    ZStack {
+//                        Button {
+//                            Task {
+//                                await viewModel.setWeatherInfoFromWeatherKit()
+//                                viewModel.onTapButton()
+//                            }
+//                        } label: {
+//                            Image("main_top_weatherInfo_\(currentWeather)")
+//                        }
+//                        VStack {
+//                            HStack {
+//                                Spacer()
+//                                Text(currentWeather.rawValue)
+//                                    .padding(.trailing)
+//                            }
+//                        }
+//                    }
+//                    .frame(width: 170, height: 128)
+//                    .background(.blue)
+//                    if let uiImage = viewModel.weatherAppleLogo,
+//                       let weatherLink = viewModel.attributionLink{
+//                        Link(destination: weatherLink, label: {
+//                            Image(uiImage: uiImage)
+//                                .resizable()
+//                                .scaledToFit()
+//                                .frame(width: 50)
+//                                .padding(.trailing)
+//                                .background(.red)
+//                        })
+//                    }
+//                }
+//            } else {
+//                Button {
+//                    Task {
+//                        await viewModel.setWeatherInfoFromWeatherKit()
+//                        viewModel.onTapButton()
+//                    }
+//                } label: {
+//                    Image("character_small")
+//                        .ignoresSafeArea()
+//                }
+//            }
         }
     }
 

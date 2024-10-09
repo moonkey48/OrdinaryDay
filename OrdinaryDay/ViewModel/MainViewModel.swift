@@ -35,8 +35,8 @@ final class MainViewModel: ObservableObject{
     init() {
         Task {
             fetchDiaryList()
-            locationMananger.auth()
-            await setWeatherInfoFromWeatherKit()
+//            locationMananger.auth()
+//            await setWeatherInfoFromWeatherKit()
         }
     }
 
@@ -57,13 +57,13 @@ final class MainViewModel: ObservableObject{
             currentWeather = .none
             return
         }
-        guard let attribution = try? await weatherManager.getAttribution(),
-              let colorScheme
+        guard let attribution = await weatherManager.getAttribution()
         else {
             currentWeather = .none
             return
         }
         attributionLink = attribution.legalPageURL
+        let colorScheme: ColorScheme = .light
         let attributionLogoURL = colorScheme == .light ? attribution.combinedMarkLightURL : attribution.combinedMarkDarkURL
 
         loadImage(url: attributionLogoURL)

@@ -46,6 +46,9 @@ struct DiaryDetailView: View {
             if viewModel.isShowDeleteAlert {
                 deleteAlertView
             }
+            if viewModel.showImageFocused {
+                focusedImageView
+            }
         }
         .navigationBarBackButtonHidden()
         .onAppear {
@@ -97,12 +100,18 @@ private extension DiaryDetailView {
                 if let imageData = viewModel.diary?.image,
                    let uiImage = UIImage(data: imageData)
                 {
-                    Image(uiImage: uiImage)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(maxWidth: .infinity)
-                        .frame(maxHeight: 200)
-                        .clipped()
+                    Button {
+                        withAnimation { 
+                            viewModel.showImageFocused = true
+                        }
+                    } label: {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(maxWidth: .infinity)
+                            .frame(maxHeight: 200)
+                            .clipped()
+                    }
                 } else {
                     Image("box_clear")
                         .resizable()
@@ -235,6 +244,27 @@ private extension DiaryDetailView {
         }
         .font(.customTitle)
         .foregroundStyle(.white)
+    }
+
+    var focusedImageView: some View {
+        ZStack {
+            Color.black.opacity(0.6)
+                .ignoresSafeArea()
+            if let imageData = viewModel.diary?.image,
+               let uiImage = UIImage(data: imageData)
+            {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity)
+                    .padding()
+            }
+        }
+        .onTapGesture {
+            withAnimation {
+                viewModel.showImageFocused = false
+            }
+        }
     }
 
     var deleteAlertView: some View {

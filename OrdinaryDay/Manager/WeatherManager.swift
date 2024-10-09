@@ -11,7 +11,7 @@ import WeatherKit
 
 protocol WeatherManager {
     func get(_ location: CLLocation) async -> Weather?
-    func getAttribution() async throws -> WeatherAttribution
+    func getAttribution() async -> WeatherAttribution?
 }
 
 class WeatherManagerImpl: WeatherManager {
@@ -29,8 +29,13 @@ class WeatherManagerImpl: WeatherManager {
         }
     }
 
-    func getAttribution() async throws -> WeatherAttribution {
-      try await WeatherService.shared.attribution
+    func getAttribution() async -> WeatherAttribution? {
+        do {
+            return try await WeatherService.shared.attribution
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
     }
 }
 

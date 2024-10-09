@@ -18,6 +18,7 @@ final class DiaryDetailViewModel {
     var editingTitle = ""
     var editingContent = ""
     var editingImage: Data?
+    var showImageFocused = false
 
     private let swiftDataManager: SwiftDataManager
     private let hapticManager: HapticManager? = HapticManagerImpl()

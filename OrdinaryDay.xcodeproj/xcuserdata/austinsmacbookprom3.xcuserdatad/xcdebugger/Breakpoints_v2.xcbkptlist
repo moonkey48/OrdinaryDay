@@ -7,49 +7,456 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7DD25AFF-CC4D-4F9B-9371-4BEF1417BD92"
+            uuid = "D6AAE498-E523-42CB-95FB-8C69FB390A84"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OrdinaryDay/Manager/HapticManager.swift"
+            filePath = "OrdinaryDay/ViewModel/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
-            landmarkName = "startEvents(_:)"
+            landmarkName = "setWeatherInfoFromWeatherKit()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D6AAE498-E523-42CB-95FB-8C69FB390A84 - 361683ba16863e98"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "896">
+               </Location>
+               <Location
+                  uuid = "D6AAE498-E523-42CB-95FB-8C69FB390A84 - 515b4391abce8aba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "D6AAE498-E523-42CB-95FB-8C69FB390A84 - 7ee35074dcbf129e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "D6AAE498-E523-42CB-95FB-8C69FB390A84 - 361683ba16863e98"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "716">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CEA9AAF-F9F7-4D12-A339-B19099BFDCD3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrdinaryDay/ViewModel/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "setWeatherInfoFromWeatherKit()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DA3B2BCB-8897-418E-938C-A50C39FF30BC"
+            uuid = "A09F9885-E203-4902-BFEA-08923E4B75F4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrdinaryDay/ViewModel/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "setWeatherInfoFromWeatherKit()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A09F9885-E203-4902-BFEA-08923E4B75F4 - 8e09b5e050e95c2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  uuid = "A09F9885-E203-4902-BFEA-08923E4B75F4 - 829cdd1db6e1c801"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "A09F9885-E203-4902-BFEA-08923E4B75F4 - 361683ba1686382d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "A09F9885-E203-4902-BFEA-08923E4B75F4 - c2e5c913ffa86628"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "A09F9885-E203-4902-BFEA-08923E4B75F4 - 829cdd1db6e1c801"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "A09F9885-E203-4902-BFEA-08923E4B75F4 - 361683ba1686382d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1A66E6FB-D391-4AEE-8217-1F26BA73E030"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OrdinaryDay/Manager/HapticManager.swift"
+            filePath = "OrdinaryDay/ViewModel/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "startEvents(_:)"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "setWeatherInfoFromWeatherKit()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1A66E6FB-D391-4AEE-8217-1F26BA73E030 - 361683ba16863980"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "1072">
+               </Location>
+               <Location
+                  uuid = "1A66E6FB-D391-4AEE-8217-1F26BA73E030 - 361683ba16863980"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "916">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E0A71D31-FD4F-4180-96F2-4127AE4CE44B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrdinaryDay/Manager/WeatherManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "getAttribution()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3E2B462B-9B76-4272-AB95-40056E4FA7C4"
+            uuid = "ED42CE88-457B-461B-9E1D-A31F87AFE7D9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OrdinaryDay/Manager/HapticManager.swift"
+            filePath = "OrdinaryDay/Manager/WeatherManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "startEvents(_:)"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getAttribution()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ED42CE88-457B-461B-9E1D-A31F87AFE7D9 - 2e753dc8dc46b3b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for OrdinaryDay.WeatherManagerImpl.getAttribution() async -&gt; Swift.Optional&lt;WeatherKit.WeatherAttribution&gt;"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/Manager/WeatherManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "ED42CE88-457B-461B-9E1D-A31F87AFE7D9 - 5ad03af7273ddfcd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for OrdinaryDay.WeatherManagerImpl.getAttribution() async -&gt; Swift.Optional&lt;WeatherKit.WeatherAttribution&gt;"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/Manager/WeatherManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "ED42CE88-457B-461B-9E1D-A31F87AFE7D9 - 8586ef7dab6fefb6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for OrdinaryDay.WeatherManagerImpl.getAttribution() async -&gt; Swift.Optional&lt;WeatherKit.WeatherAttribution&gt;"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/Manager/WeatherManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "ED42CE88-457B-461B-9E1D-A31F87AFE7D9 - b17ff1d42efb49b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for OrdinaryDay.WeatherManagerImpl.getAttribution() async -&gt; Swift.Optional&lt;WeatherKit.WeatherAttribution&gt;"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/Manager/WeatherManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C6C33D90-AB2C-4CDD-A3CE-9FA34EBBADAD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrdinaryDay/ViewModel/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "setWeatherInfoFromWeatherKit()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C6C33D90-AB2C-4CDD-A3CE-9FA34EBBADAD - 8e09b5e050e95c2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  uuid = "C6C33D90-AB2C-4CDD-A3CE-9FA34EBBADAD - 829cdd1db6e1c801"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "C6C33D90-AB2C-4CDD-A3CE-9FA34EBBADAD - 361683ba1686382d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "75437952-B179-483F-A336-6DFA9B58EE71"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrdinaryDay/ViewModel/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "setWeatherInfoFromWeatherKit()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "75437952-B179-483F-A336-6DFA9B58EE71 - 361683ba16863967"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "492">
+               </Location>
+               <Location
+                  uuid = "75437952-B179-483F-A336-6DFA9B58EE71 - 361683ba16863946"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for OrdinaryDay.MainViewModel.setWeatherInfoFromWeatherKit() async -&gt; ()"
+                  moduleName = "OrdinaryDay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/austinsmacbookprom3/Desktop/projects/OrdinaryDay/OrdinaryDay/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "280">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
