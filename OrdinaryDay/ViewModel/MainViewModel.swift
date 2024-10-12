@@ -29,7 +29,7 @@ final class MainViewModel: ObservableObject{
 
     private let weatherManager: WeatherManager = WeatherManagerImpl()
     private let swiftDataManager: SwiftDataManager = SwiftDataManagerImpl()
-    private let locationMananger: LocationManager = LocationManagerImpl()
+//    private let locationMananger: LocationManager = LocationManagerImpl()
     private let hapticManager: HapticManager? = HapticManagerImpl()
 
     init() {
@@ -51,43 +51,43 @@ final class MainViewModel: ObservableObject{
         showSelectWeather = false
     }
 
-    func setWeatherInfoFromWeatherKit() async {
-        guard let currentLocation = locationMananger.getLocation() else {
-            locationMananger.auth()
-            currentWeather = .none
-            return
-        }
-        guard let attribution = await weatherManager.getAttribution()
-        else {
-            currentWeather = .none
-            return
-        }
-        attributionLink = attribution.legalPageURL
-        let colorScheme: ColorScheme = .light
-        let attributionLogoURL = colorScheme == .light ? attribution.combinedMarkLightURL : attribution.combinedMarkDarkURL
-
-        loadImage(url: attributionLogoURL)
-
-        let weather = await weatherManager.get(currentLocation)
-        if let weather {
-            switch weather.currentWeather.condition {
-            case .windy, .wintryMix, .blowingDust, .flurries, .hurricane, .isolatedThunderstorms, .strongStorms:
-                currentWeather = .windy
-            case .snow, .blowingSnow, .frigid, .blizzard, .heavySnow, .sleet:
-                currentWeather = .snow
-            case .clear, .breezy, .mostlyClear, .hot, .sunFlurries, .sunShowers:
-                currentWeather = .sunny
-            case .cloudy, .foggy, .haze, .mostlyCloudy, .smoky:
-                currentWeather = .cloudy
-            case .partlyCloudy:
-                currentWeather = .partlyCloudy
-            case .rain, .hail, .drizzle, .freezingDrizzle, .freezingRain, .heavyRain, .scatteredThunderstorms, .thunderstorms, .tropicalStorm:
-                currentWeather = .rainy
-            default:
-                currentWeather = .none
-            }
-        }
-    }
+//    func setWeatherInfoFromWeatherKit() async {
+//        guard let currentLocation = locationMananger.getLocation() else {
+//            locationMananger.auth()
+//            currentWeather = .none
+//            return
+//        }
+//        guard let attribution = await weatherManager.getAttribution()
+//        else {
+//            currentWeather = .none
+//            return
+//        }
+//        attributionLink = attribution.legalPageURL
+//        let colorScheme: ColorScheme = .light
+//        let attributionLogoURL = colorScheme == .light ? attribution.combinedMarkLightURL : attribution.combinedMarkDarkURL
+//
+//        loadImage(url: attributionLogoURL)
+//
+//        let weather = await weatherManager.get(currentLocation)
+//        if let weather {
+//            switch weather.currentWeather.condition {
+//            case .windy, .wintryMix, .blowingDust, .flurries, .hurricane, .isolatedThunderstorms, .strongStorms:
+//                currentWeather = .windy
+//            case .snow, .blowingSnow, .frigid, .blizzard, .heavySnow, .sleet:
+//                currentWeather = .snow
+//            case .clear, .breezy, .mostlyClear, .hot, .sunFlurries, .sunShowers:
+//                currentWeather = .sunny
+//            case .cloudy, .foggy, .haze, .mostlyCloudy, .smoky:
+//                currentWeather = .cloudy
+//            case .partlyCloudy:
+//                currentWeather = .partlyCloudy
+//            case .rain, .hail, .drizzle, .freezingDrizzle, .freezingRain, .heavyRain, .scatteredThunderstorms, .thunderstorms, .tropicalStorm:
+//                currentWeather = .rainy
+//            default:
+//                currentWeather = .none
+//            }
+//        }
+//    }
 
     func fetchDiaryList() {
         diaryList = swiftDataManager.getAllDiary()

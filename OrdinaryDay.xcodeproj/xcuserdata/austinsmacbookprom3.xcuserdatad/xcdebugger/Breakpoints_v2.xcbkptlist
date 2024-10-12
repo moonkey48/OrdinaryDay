@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
-            landmarkName = "setWeatherInfoFromWeatherKit()"
-            landmarkType = "7">
+            landmarkName = "MainViewModel"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "D6AAE498-E523-42CB-95FB-8C69FB390A84 - 361683ba16863e98"
@@ -94,8 +94,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
             endingLineNumber = "73"
-            landmarkName = "setWeatherInfoFromWeatherKit()"
-            landmarkType = "7">
+            landmarkName = "MainViewModel"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,8 +110,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
             endingLineNumber = "58"
-            landmarkName = "setWeatherInfoFromWeatherKit()"
-            landmarkType = "7">
+            landmarkName = "MainViewModel"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "A09F9885-E203-4902-BFEA-08923E4B75F4 - 8e09b5e050e95c2f"
@@ -218,8 +218,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
             endingLineNumber = "63"
-            landmarkName = "setWeatherInfoFromWeatherKit()"
-            landmarkType = "7">
+            landmarkName = "MainViewModel"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "1A66E6FB-D391-4AEE-8217-1F26BA73E030 - 361683ba16863980"
@@ -360,8 +360,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
             endingLineNumber = "60"
-            landmarkName = "setWeatherInfoFromWeatherKit()"
-            landmarkType = "7">
+            landmarkName = "MainViewModel"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "C6C33D90-AB2C-4CDD-A3CE-9FA34EBBADAD - 8e09b5e050e95c2f"
@@ -423,8 +423,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
-            landmarkName = "setWeatherInfoFromWeatherKit()"
-            landmarkType = "7">
+            landmarkName = "MainViewModel"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "75437952-B179-483F-A336-6DFA9B58EE71 - 361683ba16863967"
